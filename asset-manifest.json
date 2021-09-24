@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/yumeni-frontend/static/css/main.8ee29113.chunk.css",
+    "main.js": "/yumeni-frontend/static/js/main.1dffc7e7.chunk.js",
+    "main.js.map": "/yumeni-frontend/static/js/main.1dffc7e7.chunk.js.map",
+    "runtime-main.js": "/yumeni-frontend/static/js/runtime-main.1d43ead0.js",
+    "runtime-main.js.map": "/yumeni-frontend/static/js/runtime-main.1d43ead0.js.map",
+    "static/js/2.6cc80aa3.chunk.js": "/yumeni-frontend/static/js/2.6cc80aa3.chunk.js",
+    "static/js/2.6cc80aa3.chunk.js.map": "/yumeni-frontend/static/js/2.6cc80aa3.chunk.js.map",
+    "static/js/3.f3ebaf22.chunk.js": "/yumeni-frontend/static/js/3.f3ebaf22.chunk.js",
+    "static/js/3.f3ebaf22.chunk.js.map": "/yumeni-frontend/static/js/3.f3ebaf22.chunk.js.map",
+    "index.html": "/yumeni-frontend/index.html",
+    "static/css/main.8ee29113.chunk.css.map": "/yumeni-frontend/static/css/main.8ee29113.chunk.css.map",
+    "static/js/2.6cc80aa3.chunk.js.LICENSE.txt": "/yumeni-frontend/static/js/2.6cc80aa3.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.1d43ead0.js",
+    "static/js/2.6cc80aa3.chunk.js",
+    "static/css/main.8ee29113.chunk.css",
+    "static/js/main.1dffc7e7.chunk.js"
+  ]
+}
