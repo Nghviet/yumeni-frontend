@@ -7,12 +7,12 @@ import "../css/box.css";
 export default class PrefectureBox extends Component {
   static get propTypes() {
     return {
-      pref: PropTypes.any,
-      mode: PropTypes.any,
-      currentCode: PropTypes.any,
-      loadData: PropTypes.func,
-      createAlert: PropTypes.func,
-      onPrefectureSelect: PropTypes.func,
+      pref: PropTypes.any, // Prefecture info
+      mode: PropTypes.any, // Mode 1 : pref population - 2 : city population
+      currentCode: PropTypes.any, // Current selected box code, change color if match
+      loadData: PropTypes.func, // Load population data to graph
+      createAlert: PropTypes.func, // Send alert to root if happen
+      onPrefectureSelect: PropTypes.func // Load cities list when this box is selected in mode 2
     };
   }
   constructor(props) {
@@ -37,16 +37,15 @@ export default class PrefectureBox extends Component {
 
   show_population(evt) {
     evt.preventDefault();
-    if (this.state.added == false) {
+    var currentCode = this.props.currentCode;
+    if (currentCode == undefined || !currentCode.toString().startsWith(this.pref.prefCode + "_")) {
+
       getPopulationOfPrefecture(this.pref.prefCode)
         .then((result) => {
           this.props.loadData(result, this.pref.prefCode + "_");
-          this.setState({ added: true });
         })
         .catch((err) => this.props.createAlert(err));
-    } else {
-      this.setState({ added: false });
-    }
+    } 
   }
 
   render() {
@@ -57,34 +56,16 @@ export default class PrefectureBox extends Component {
         ? "#4924A1"
         : "#A8A878";
     return (
-      <div>
-        <table
-          style={{
-            width: "100%",
-            color: "white",
-            backgroundColor: color,
-            borderRadius: "25px",
-            border: "5px solid #6D6D4E",
-          }}
-        >
-          <tbody>
-            <tr>
-              <td
-                align="center"
-                onClick={
-                  this.mode == 2
-                    ? this.change_display.bind(this)
-                    : this.show_population.bind(this)
-                }
-                style={{ borderRadius: "25px" }}
-                className="prefBox"
-              >
-                {this.pref.prefName}
-              </td>
-            </tr>
-          </tbody>
-        </table>
-        <p></p>
+      <div className="prefBox" style={{
+        backgroundColor: color
+        }}
+        onClick={
+            this.mode == 2
+              ? this.change_display
+              : this.show_population
+        }>
+        
+        {this.pref.prefName}
       </div>
     );
   }

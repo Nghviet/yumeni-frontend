@@ -6,10 +6,10 @@ import "../css/box.css";
 export default class CityBox extends Component {
   static get propTypes() {
     return {
-      city: PropTypes.any,
-      currentCode: PropTypes.any,
-      loadData: PropTypes.func,
-      createAlert: PropTypes.func,
+      city: PropTypes.any, // City need to display
+      currentCode: PropTypes.any, // Current selected box code, change color if match
+      loadData: PropTypes.func, // Load population data to graph
+      createAlert: PropTypes.func, // Send alert to root if happen
     };
   }
 
@@ -24,19 +24,19 @@ export default class CityBox extends Component {
 
   show_population(evt) {
     evt.preventDefault();
-    if (this.state.added == false) {
+    
+    var currentCode = this.props.currentCode;
+    var code = this.props.city.prefCode + "_" + this.props.city.cityCode;
+    if (currentCode == undefined || currentCode != code) {
       getPopulationOfCity(this.props.city.prefCode, this.props.city.cityCode)
         .then((result) => {
           this.props.loadData(
             result,
             this.props.city.prefCode + "_" + this.props.city.cityCode
           );
-          this.setState({ added: true });
         })
         .catch((err) => this.props.createAlert(err));
-    } else {
-      this.setState({ added: false });
-    }
+    } 
   }
 
   render() {
@@ -55,7 +55,7 @@ export default class CityBox extends Component {
       >
         <p></p>
         <div
-          onClick={this.show_population.bind(this)}
+          onClick={this.show_population}
           align="center"
           className="cityBox"
         >

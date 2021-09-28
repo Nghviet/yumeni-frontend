@@ -7,11 +7,10 @@ import "../App.css";
 export default class PrefecturePage extends Component {
   static get propTypes() {
     return {
-      pref: PropTypes.any,
-      currentCode: PropTypes.any,
-      loadData: PropTypes.func,
-      createAlert: PropTypes.func,
-      onPrefectureSelect: PropTypes.func,
+      pref: PropTypes.any, // Pref info
+      currentCode: PropTypes.any, // Current selected box code, change color if match
+      loadData: PropTypes.func, // Load population data to graph
+      createAlert: PropTypes.func, // Send alert to root if happen
     };
   }
   constructor(props) {

@@ -20,3 +20,47 @@
   grid-template-columns: repeat(4, 1fr);
   gap: 10px;
 }
+
+.totalPopulation, .youngPopulation, .workingAge, .oldPopulation, .noDisplay {
+  border-radius: 25px;
+  text-align: center;
+  margin-bottom: 10px;
+  font-size: large;
+  font-weight: bold;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;
+  align: center;
+}
+
+.totalPopulation {
+  border: 5px solid #6D5E9C;
+  background-color: #A890F0;
+  color: white;
+}
+
+.youngPopulation {
+  border: 5px solid #2C2C2C;
+  background-color: #4F5870;
+  color: white;
+}
+
+.workingAge {
+  border: 5px solid #7D1F1A;
+  background-color: #C03028;
+  color: white;
+}
+
+.oldPopulation {
+  border: 5px solid #4E8234;
+  background-color: #78C850;
+  color: white;
+}
+
+.noDisplay {
+  border: 5px solid #787887;
+  background-color: #D1D1E0;
+  color: white;
+}

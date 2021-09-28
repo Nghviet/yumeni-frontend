@@ -9,11 +9,11 @@ import "../css/cityPage.css";
 export default class CityList extends Component {
   static get propTypes() {
     return {
-      prefName: PropTypes.any,
+      prefName: PropTypes.any, // Pref information
       prefCode: PropTypes.any,
-      currentCode: PropTypes.any,
-      loadData: PropTypes.func,
-      createAlert: PropTypes.func,
+      currentCode: PropTypes.any, // Current selected box code, change color if match
+      loadData: PropTypes.func, // Load population data to graph
+      createAlert: PropTypes.func, // Send alert to root if happen
     };
   }
   constructor(props) {

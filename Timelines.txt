@@ -1,0 +1,5 @@
+Timelines
+20/9: 2 hour : testing resas on postman, recharts and load data function
+21/9: 2 hour : 1st design, compare total population between prefecture or cities
+23-24/9 : 4 hour : redesign the frontend
+26-28/9 : 10 hour: testing, debug and clean up
