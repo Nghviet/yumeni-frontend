@@ -31,12 +31,14 @@ export default class PrefectureBox extends Component {
   }
 
   change_display(evt) {
+    //Change display city
     evt.preventDefault();
     this.props.onPrefectureSelect(this.pref.prefCode, this.pref.prefName);
   }
 
   show_population(evt) {
     evt.preventDefault();
+    // load prefecture's population data to the graph
     var currentCode = this.props.currentCode;
     if (currentCode == undefined || !currentCode.toString().startsWith(this.pref.prefCode + "_")) {
 
